@@ -25,7 +25,18 @@ const getRandomNumer = () => {
     return numRandom;
 }
 
+for (let i = 0; i < squadre.length; i++) {
+    const squadra = squadre[i];
+
+    // console.log('random: ' + getRandomNumer());
+
+    squadra['punti fatti'] = getRandomNumer();
+    squadra['falli subiti'] = getRandomNumer();
+    console.log('punti fatti: ' + squadra['punti fatti']);
+    console.log('falli subiti: ' + squadra['falli subiti']);
+    console.log('----------------------------------')
+}
 
 
 
-console.log(getRandomNumer());
+
