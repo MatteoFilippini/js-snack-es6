@@ -19,4 +19,8 @@ const bikes = [
     { nome: 'cross', peso: 15 }
 ]
 
-console.log(bikes)
+// PRENDO LA PROPRIETA PESO
+for (let i = 0; i < bikes.length; i++) {
+    const { peso } = bikes[i];
+    console.log(peso);
+}
