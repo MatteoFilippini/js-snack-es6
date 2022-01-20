@@ -10,3 +10,13 @@ Stampare ain console la bici con peso minore utilizzando destructuring e templat
 // prendo la proprieta peso di ogni oggetto
 //     -le confronto e trovo la minore
 // stampo
+
+// ARRAY
+const bikes = [
+    // OGGETTI
+    { nome: 'bmx', peso: 10 },
+    { nome: 'graziella', peso: 5 },
+    { nome: 'cross', peso: 15 }
+]
+
+console.log(bikes)
