@@ -10,32 +10,58 @@ Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengo
 // creo l Array
 // oggetto{nome,punti fatti=0,falli subiti=0}
 // funzione numero random
-// assegon un numero random alle proprieta punti-fatti e falli-subiti
+// assegno un numero random alle proprieta punti-fatti e falli-subiti
 
 
+// ARRAY DI SQUADRE
 const squadre = [
-    { nome: 'Inter', 'punti fatti': 0, 'falli subiti': 0 },
-    { nome: 'Milan', 'punti fatti': 0, 'falli subiti': 0 },
-    { nome: 'juve', 'punti fatti': 0, 'falli subiti': 0 }
+    { nome: 'Inter', puntiFatti: 0, falliSubiti: 0 },
+    { nome: 'Milan', puntiFatti: 0, falliSubiti: 0 },
+    { nome: 'juve', puntiFatti: 0, falliSubiti: 0 }
 ]
 
+// FUNZIONE RANDOM
 const getRandomNumer = () => {
     const numRandom = Math.floor(Math.random() * 5);
 
     return numRandom;
 }
 
+// ASSEGNO UN VALORE ALLE PROPRIETA PT FS
 for (let i = 0; i < squadre.length; i++) {
     const squadra = squadre[i];
 
-    // console.log('random: ' + getRandomNumer());
+    squadra['puntiFatti'] = getRandomNumer();
+    squadra['falliSubiti'] = getRandomNumer();
 
-    squadra['punti fatti'] = getRandomNumer();
-    squadra['falli subiti'] = getRandomNumer();
-    console.log('punti fatti: ' + squadra['punti fatti']);
-    console.log('falli subiti: ' + squadra['falli subiti']);
+    console.log('punti fatti: ' + squadra['puntiFatti']);
+    console.log('falli subiti: ' + squadra['falliSubiti']);
     console.log('----------------------------------')
+
+
 }
+
+
+
+// PRENDO SOLO LE PROPRIETA CHE MI INTERESSA (NOME E FS)
+const newSquadre = [];
+for (key in squadre) {
+    const { nome, falliSubiti } = squadre[key];
+
+    // creo gli oggetti
+    const ogg = { nome, falliSubiti };
+
+    // li metto nel nuovo array
+    newSquadre.push(ogg);
+
+}
+
+console.table(newSquadre)
+
+
+
+
+
 
 
 
