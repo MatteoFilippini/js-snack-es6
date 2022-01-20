@@ -7,10 +7,13 @@ Punti fatti e falli subiti.
 Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
-// creo l Array
-// oggetto{nome,punti fatti=0,falli subiti=0}
-// funzione numero random
-// assegno un numero random alle proprieta punti-fatti e falli-subiti
+const btnGen = document.getElementById('btnGen');
+
+btnGen.addEventListener('click', function () {
+    const display = document.getElementsById('display');
+    display.innertext = ' ';
+    console.table(newSquadre);
+})
 
 
 // ARRAY DI SQUADRE
@@ -49,7 +52,8 @@ for (key in squadre) {
     newSquadre.push(ogg);   // li metto nel nuovo array
 }
 
-console.table(newSquadre)
+
+
 
 
 
