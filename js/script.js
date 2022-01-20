@@ -16,11 +16,18 @@ const bikes = [
     // OGGETTI
     { nome: 'bmx', peso: 10 },
     { nome: 'graziella', peso: 5 },
-    { nome: 'cross', peso: 15 }
+    { nome: 'cross', peso: 8 }
 ]
 
 // PRENDO LA PROPRIETA PESO
+// creo una variabile temporanea
+let maxPeso = 0;
 for (let i = 0; i < bikes.length; i++) {
     const { peso } = bikes[i];
-    console.log(peso);
+    // calcolo se il valore della proprieta e maggiore del peso massimo sabilita
+    if (peso > maxPeso) {
+        maxPeso = peso;
+    }
 }
+
+console.log(maxPeso);
