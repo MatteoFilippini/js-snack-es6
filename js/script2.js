@@ -7,22 +7,6 @@ Punti fatti e falli subiti.
 Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
-const btnGen = document.getElementById('btnGen');
-
-btnGen.addEventListener('click', function () {
-    const display = document.getElementsById('display');
-    display.innertext = ' ';
-    console.table(newSquadre);
-})
-
-
-// ARRAY DI SQUADRE
-const squadre = [
-    { nome: 'Inter', puntiFatti: 0, falliSubiti: 0 },
-    { nome: 'Milan', puntiFatti: 0, falliSubiti: 0 },
-    { nome: 'juve', puntiFatti: 0, falliSubiti: 0 }
-]
-
 // FUNZIONE RANDOM
 const getRandomNumer = () => {
     const numRandom = Math.floor(Math.random() * 5);
@@ -30,27 +14,69 @@ const getRandomNumer = () => {
     return numRandom;
 }
 
-// ASSEGNO UN VALORE ALLE PROPRIETA PT FS
-for (let i = 0; i < squadre.length; i++) {
-    const squadra = squadre[i];
+const btnGen = document.getElementById('btnGen');
+// ARRAY DI SQUADRE
+const squadre = [
+    { nome: 'Inter', puntiFatti: 0, falliSubiti: 0 },
+    { nome: 'Milan', puntiFatti: 0, falliSubiti: 0 },
+    { nome: 'Juve', puntiFatti: 0, falliSubiti: 0 }
+]
 
-    squadra['puntiFatti'] = getRandomNumer();
-    squadra['falliSubiti'] = getRandomNumer();
+btnGen.addEventListener('click', function () {
+    const display = document.getElementById('display');
+    const table = document.querySelector('table');
+    table.innerText = '';
 
-    console.log('punti fatti: ' + squadra['puntiFatti']);
-    console.log('falli subiti: ' + squadra['falliSubiti']);
-    console.log('----------------------------------')
-}
 
-// PRENDO SOLO LE PROPRIETA CHE MI INTERESSA (NOME E FS)
-const newSquadre = [];
-for (key in squadre) {
-    const { nome, falliSubiti } = squadre[key]; // prendo le proprieta
+    // ASSEGNO UN VALORE ALLE PROPRIETA PT FS
+    for (let i = 0; i < squadre.length; i++) {
+        const squadra = squadre[i];
 
-    const ogg = { nome, falliSubiti };  // creo gli oggetti
+        squadra['puntiFatti'] = getRandomNumer();
+        squadra['falliSubiti'] = getRandomNumer();
 
-    newSquadre.push(ogg);   // li metto nel nuovo array
-}
+        console.log('punti fatti: ' + squadra['puntiFatti']);
+        console.log('falli subiti: ' + squadra['falliSubiti']);
+        console.log('----------------------------------')
+    }
+
+    // PRENDO SOLO LE PROPRIETA CHE MI INTERESSA (NOME E FS)
+    const newSquadre = [];
+    for (key in squadre) {
+        const { nome, falliSubiti } = squadre[key]; // prendo le proprieta
+
+        const ogg = { nome, falliSubiti };  // creo gli oggetti
+
+        newSquadre.push(ogg);   // li metto nel nuovo array
+    }
+
+    let firstRow = document.createElement('tr');
+    firstRow.innerHTML = (`<td>NOMI</td>
+    <td>FALLI SUBITI</td>`);
+    firstRow.classList.add('green');
+    table.append(firstRow);
+    // STAMPO IN PAGINA IL NUOVO ARRAY
+    for (let i = 0; i < newSquadre.length; i++) {
+        const currentObject = newSquadre[i];
+        let row = document.createElement('tr');
+        for (let key in currentObject) {
+            let cell = document.createElement('td');
+            cell.innerText = (`${currentObject[key]}`);
+            row.append(cell);
+        }
+        table.append(row);
+    }
+
+
+    console.table(newSquadre);
+})
+
+
+
+
+
+
+
 
 
 
