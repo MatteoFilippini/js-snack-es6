@@ -37,23 +37,16 @@ for (let i = 0; i < squadre.length; i++) {
     console.log('punti fatti: ' + squadra['puntiFatti']);
     console.log('falli subiti: ' + squadra['falliSubiti']);
     console.log('----------------------------------')
-
-
 }
-
-
 
 // PRENDO SOLO LE PROPRIETA CHE MI INTERESSA (NOME E FS)
 const newSquadre = [];
 for (key in squadre) {
-    const { nome, falliSubiti } = squadre[key];
+    const { nome, falliSubiti } = squadre[key]; // prendo le proprieta
 
-    // creo gli oggetti
-    const ogg = { nome, falliSubiti };
+    const ogg = { nome, falliSubiti };  // creo gli oggetti
 
-    // li metto nel nuovo array
-    newSquadre.push(ogg);
-
+    newSquadre.push(ogg);   // li metto nel nuovo array
 }
 
 console.table(newSquadre)
