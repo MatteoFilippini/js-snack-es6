@@ -5,6 +5,13 @@ Usiamo i nuovi metodi degli array visti oggi in classe.
 */
 
 
+const valueBetween = (array, a, b) => {
+    array.forEach((element, index) => {
+        if (index >= a && index <= b) {
+            console.log(element, index)
+        }
+    });
+};
 
 const names = [
     { nome: 'Matteo' },
@@ -16,6 +23,6 @@ const names = [
 
 console.log(names);
 
-const b = names.filter(nomi => nomi.nome === 'Luca');
 
-console.log(b)
+
+valueBetween(names, 3, 4);
