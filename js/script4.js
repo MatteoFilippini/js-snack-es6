@@ -6,7 +6,7 @@ ES (marco de iulio => Marco de iulio);
 3. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
 */
 
-
+// CREO L'ARRAY DI STUDENTI
 const students = [
     { id: 0, nome: 'matteo', sumVotes: 55 },
     { id: 5, nome: 'luca', sumVotes: 56 },
@@ -14,3 +14,10 @@ const students = [
     { id: 2, nome: 'Paolo', sumVotes: 59 },
     { id: 45, nome: 'mattiA', sumVotes: 60 }
 ]
+console.log(students)
+
+// CREO L'ARRAY DEI NOMI IN MAIUSOCLO DEGLI STUDENTI 
+const studentsUp = students.map(({ nome }) => {
+    return nome.toUpperCase();
+});
+console.log(studentsUp)
