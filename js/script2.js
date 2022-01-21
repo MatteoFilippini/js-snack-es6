@@ -9,7 +9,7 @@ Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengo
 
 // FUNZIONE RANDOM
 const getRandomNumer = () => {
-    const numRandom = Math.floor(Math.random() * 5);
+    const numRandom = Math.floor(Math.random() * 5) + 1;
 
     return numRandom;
 }
@@ -26,36 +26,26 @@ btnGen.addEventListener('click', function () {
     const display = document.getElementById('display');
     const table = document.querySelector('table');
     table.innerText = '';
-
-
     // ASSEGNO UN VALORE ALLE PROPRIETA PT FS
     for (let i = 0; i < squadre.length; i++) {
         const squadra = squadre[i];
-
         squadra['puntiFatti'] = getRandomNumer();
         squadra['falliSubiti'] = getRandomNumer();
-
-        console.log('punti fatti: ' + squadra['puntiFatti']);
-        console.log('falli subiti: ' + squadra['falliSubiti']);
-        console.log('----------------------------------')
     }
-
     // PRENDO SOLO LE PROPRIETA CHE MI INTERESSA (NOME E FS)
     const newSquadre = [];
     for (key in squadre) {
         const { nome, falliSubiti } = squadre[key]; // prendo le proprieta
-
         const ogg = { nome, falliSubiti };  // creo gli oggetti
-
         newSquadre.push(ogg);   // li metto nel nuovo array
     }
-
+    // STAMPO IN PAGINA LA TABELLA
     let firstRow = document.createElement('tr');
     firstRow.innerHTML = (`<td>NOMI</td>
     <td>FALLI SUBITI</td>`);
     firstRow.classList.add('green');
     table.append(firstRow);
-    // STAMPO IN PAGINA IL NUOVO ARRAY
+
     for (let i = 0; i < newSquadre.length; i++) {
         const currentObject = newSquadre[i];
         let row = document.createElement('tr');
@@ -66,9 +56,6 @@ btnGen.addEventListener('click', function () {
         }
         table.append(row);
     }
-
-
-    console.table(newSquadre);
 })
 
 
