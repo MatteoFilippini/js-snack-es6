@@ -12,7 +12,7 @@ const students = [
     { id: 5, nome: 'luca', sumVotes: 56 },
     { id: 77, nome: 'GIACOMO', sumVotes: 77 },
     { id: 2, nome: 'Paolo', sumVotes: 59 },
-    { id: 45, nome: 'mattiA', sumVotes: 671 }
+    { id: 121, nome: 'mattiA', sumVotes: 671 }
 ]
 console.log(students)
 
@@ -30,5 +30,12 @@ const sumVotesMax = students.filter(({ sumVotes }) => {
         return sumVotes;
     }
 });
-
 console.log(sumVotesMax)
+
+// CREO L'ARRAY DI STUDENTI CON VOTO MAGGIORE DI 70 E ID SUPERIORE A 120
+const sumVotesMin = students.filter(({ sumVotes, id }) => {
+    if (sumVotes > 70 && id > 120) {
+        return sumVotes;
+    }
+});
+console.log(sumVotesMin);
