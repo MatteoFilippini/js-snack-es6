@@ -12,7 +12,7 @@ const students = [
     { id: 5, nome: 'luca', sumVotes: 56 },
     { id: 77, nome: 'GIACOMO', sumVotes: 77 },
     { id: 2, nome: 'Paolo', sumVotes: 59 },
-    { id: 45, nome: 'mattiA', sumVotes: 60 }
+    { id: 45, nome: 'mattiA', sumVotes: 671 }
 ]
 console.log(students)
 
@@ -23,3 +23,12 @@ const studentsUp = students.map(({ nome }) => {
     return firstletter + otherLetters;
 });
 console.log(studentsUp)
+
+// CREO L'ARRAY DI STUDENTI CON VOTO MAGGIORE DI 70
+const sumVotesMax = students.filter(({ sumVotes }) => {
+    if (sumVotes > 70) {
+        return sumVotes;
+    }
+});
+
+console.log(sumVotesMax)
