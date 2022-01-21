@@ -18,6 +18,8 @@ console.log(students)
 
 // CREO L'ARRAY DEI NOMI IN MAIUSOCLO DEGLI STUDENTI 
 const studentsUp = students.map(({ nome }) => {
-    return nome.toUpperCase();
+    const firstletter = nome.charAt(0).toUpperCase();
+    const otherLetters = nome.substring(1).toLowerCase();
+    return firstletter + otherLetters;
 });
 console.log(studentsUp)
