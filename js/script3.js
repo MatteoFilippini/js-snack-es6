@@ -7,9 +7,7 @@ Usiamo i nuovi metodi degli array visti oggi in classe.
 
 const valueBetween = (array, a, b) => {
     array.forEach((element, index) => {
-        if (index >= a && index <= b) {
-            console.log(element, index)
-        }
+        if (index >= a && index <= b) console.log(element, index);
     });
 };
 
@@ -22,7 +20,5 @@ const names = [
 ]
 
 console.log(names);
-
-
 
 valueBetween(names, 3, 4);
